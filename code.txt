@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIADEMA - Choral</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>DIADEMA</h1>
+    <p>Choral manokana</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero / Accueil -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <img src="solfege.png" alt="Solfege Icon" class="solfege-img">
+    <div class="hero-content">
+      <h1>DIADEMA</h1>
+      <p>Choral manokana – Mankalaza ny mozika sy ny fiaraha-mientana</p>
+      <div class="buttons">
+        <button onclick="showTitlePage()">
+          <img src="music-alt.png" alt="Tononkira" class="btn-icon"> TONONKIRA
+        </button>
+        <button onclick="showPage('photos')">
+          <img src="picture.png" alt="Sary" class="btn-icon"> SARY
+        </button>
+        <button onclick="showPage('notes')">
+          <img src="notes.png" alt="Bloc Note" class="btn-icon"> BLOC NOTE
+        </button>
+        <button onclick="showPage('information')">
+          <img src="info.png" alt="Information" class="btn-icon"> INFORMATION
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page titres Hira -->
+  <section id="titles" class="page">
+    <h2>Tononkira – Fidio ny titre</h2>
+    <input type="text" id="searchTitle" placeholder="Mitady titre..." onkeyup="filterTitles()">
+
+    <div class="song-buttons" id="titleButtons">
+
+      <button onclick="showSongPage('Aiza?')">Aiza?</button>
+      <button onclick="showSongPage('Anao ny dera')">Anao ny dera</button>
+      <button onclick="showSongPage('Andeha re')">Andeha re</button>
+      <button onclick="showSongPage('Andeha isika')">Andeha isika</button>
+      <button onclick="showSongPage('Andriamanitra fitiavana')">Andriamanitra fitiavana</button>
+      <button onclick="showSongPage('Antso')">Antso</button>
+      <button onclick="showSongPage('Aza manda')">Aza manda</button>
+      <button onclick="showSongPage('Averiko')">Averiko</button>
+      <button onclick="showSongPage('Akory aby')">Akory aby</button>
+      <button onclick="showSongPage('Dimy adala')">Dimy adala</button>
+      <button onclick="showSongPage('Dobodoboka Fiderana')">Dobodoboka Fiderana</button>
+      <button onclick="showSongPage('Fahefana')">Fahefana</button>
+      <button onclick="showSongPage('Falifaly')">Falifaly</button>
+      <button onclick="showSongPage('Feo mamanton\'alina')">Feo mamanton'alina</button>
+      <button onclick="showSongPage('Filamana fitia')">Filamana fitia</button>
+      <button onclick="showSongPage('Fitia')">Fitia</button>
+      <button onclick="showSongPage('Fitia Agape')">Fitia Agape</button>
+      <button onclick="showSongPage('Fitiavan\'Andriamanitra')">Fitiavan'Andriamanitra</button>
+      <button onclick="showSongPage('Gasy mila vonjy')">Gasy mila vonjy</button>
+      <button onclick="showSongPage('Générique 1.0')">Générique 1.0</button>
+      <button onclick="showSongPage('Générique 2.0')">Générique 2.0</button>
+      <button onclick="showSongPage('Générique Xms')">Générique Xms</button>
+      <button onclick="showSongPage('Glory to the lord')">Glory to the lord</button>
+      <button onclick="showSongPage('Hadinina')">Hadinina</button>
+      <button onclick="showSongPage('Ho anao')">Ho anao</button>
+      <button onclick="showSongPage('Ho iray')">Ho iray</button>
+      <button onclick="showSongPage('Hoy ianao')">Hoy ianao</button>
+      <button onclick="showSongPage('Ia re')">Ia re</button>
+      <button onclick="showSongPage('Ilay fahefana')">Ilay fahefana</button>
+      <button onclick="showSongPage('Indraidray')">Indraidray</button>
+      <button onclick="showSongPage('Ireo talenta')">Ireo talenta</button>
+      <button onclick="showSongPage('Izy no Mpanjaka')">Izy no Mpanjaka</button>
+      <button onclick="showSongPage('Jesosy ampandomba')">Jesosy ampandomba</button>
+      <button onclick="showSongPage('Jesosy irery ihany')">Jesosy irery ihany</button>
+      <button onclick="showSongPage('Rambeso Jesosy')">Rambeso Jesosy</button>
+      <button onclick="showSongPage('Mahareta')">Mahareta</button>
+      <button onclick="showSongPage('Mahery noho ny mahery')">Mahery noho ny mahery</button>
+      <button onclick="showSongPage('Maty Kristy')">Maty Kristy</button>
+      <button onclick="showSongPage('Mba mamindra fo')">Mba mamindra fo</button>
+      <button onclick="showSongPage('Mba ho iray')">Mba ho iray</button>
+      <button onclick="showSongPage('Misaotra anao')">Misaotra anao</button>
+      <button onclick="showSongPage('Mitsangana')">Mitsangana</button>
+      <button onclick="showSongPage('Mila Anao')">Mila Anao</button>
+      <button onclick="showSongPage('Mitaray tany')">Mitaray tany</button>
+      <button onclick="showSongPage('Nijaly Ianao')">Nijaly Ianao</button>
+      <button onclick="showSongPage('Noely izay')">Noely izay</button>
+      <button onclick="showSongPage('Ny finoako')">Ny finoako</button>
+      <button onclick="showSongPage('Ny fitiavana mahery')">Ny fitiavana mahery</button>
+      <button onclick="showSongPage('Ny hirako')">Ny hirako</button>
+      <button onclick="showSongPage('Omeo finoana')">Omeo finoana</button>
+      <button onclick="showSongPage('Sambatra')">Sambatra</button>
+      <button onclick="showSongPage('Sao very maina')">Sao very maina</button>
+      <button onclick="showSongPage('Tano mafy')">Tano mafy</button>
+      <button onclick="showSongPage('Tanora ô')">Tanora ô</button>
+      <button onclick="showSongPage('Talilio')">Talilio</button>
+      <button onclick="showSongPage('Telo izay Iray')">Telo izay Iray</button>
+      <button onclick="showSongPage('Tsaroko fa manana hery aho')">Tsaroko fa manana hery aho</button>
+      <button onclick="showSongPage('Tsa soa ny manan-droa')">Tsa soa ny manan-droa</button>
+      <button onclick="showSongPage('Veloma')">Veloma</button>
+      <button onclick="showSongPage('Zanaharinay')">Zanaharinay</button>
+
+    </div>
+
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Page hira tsirairay -->
+  <section id="songContent" class="page">
+    <h2 id="songTitle"></h2>
+    <p id="songLyrics"></p>
+    <button class="back-btn" onclick="backToTitles()">Hiverina Titre</button>
+  </section>
+
+  <!-- Gallery -->
+  <section id="photos" class="page">
+    <h2>Sary</h2>
+    <div class="photo-selector">
+      <label><input type="checkbox" value="photos/photo1.jpg" onchange="updateGallery()"> Photo 1</label>
+      <label><input type="checkbox" value="photos/photo2.jpg" onchange="updateGallery()"> Photo 2</label>
+      <label><input type="checkbox" value="photos/photo3.jpg" onchange="updateGallery()"> Photo 3</label>
+    </div>
+    <div class="photo-gallery" id="selectedPhotos"></div>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Bloc Note -->
+  <section id="notes" class="page">
+    <h2>Bloc Note PRO</h2>
+    <div id="noteForm">
+      <input type="text" id="noteTitle" placeholder="Titre note">
+      <textarea id="noteText" placeholder="Soraty eto ny notes-nao..."></textarea>
+      <button onclick="saveNote()">💾 Enregistrer</button>
+      <button onclick="startRecording()">🎤 Enregistrement vocal</button>
+      <button onclick="takePhoto()">📷 Maka sary</button>
+    </div>
+    <input type="text" id="searchNote" placeholder="Mitady note..." onkeyup="filterNotes()">
+    <div id="notesList"></div>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Information -->
+  <section id="information" class="page">
+    <h2>Information</h2>
+    <p>Ato no azonao ampidirana ny vaovao rehetra momba ny choral DIADEMA.</p>
+    <p>Contact: <a href="mailto:contact@example.com">contact@example.com</a></p>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 DIADEMA - Choral</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

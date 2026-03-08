@@ -1,0 +1,1 @@
+Create a modern and elegant logo for "KTLM Diadema". Use primary colors: blue, yellow, and garnet. The text "KTLM Diadema" should be prominent and clear. Integrate subtle musical elements, such as notes or solfège symbols. The style should be professional, suitable for a choir application, with a visually striking and balanced color scheme.

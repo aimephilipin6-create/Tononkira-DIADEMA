@@ -1,0 +1,29 @@
+// Object hitahiry ny tononkira tsirairay
+const songs = {};
+
+// Eto no handikanao ny tononkira tsirairay
+// Ohatra:
+songs["Aiza?"] = `Tononkira ho an'ny "Aiza?" eto...`;
+songs["Anao ny dera"] = `Tononkira ho an'ny "Anao ny dera" eto...`;
+songs["Andeha re"] = `Tononkira ho an'ny "Andeha re" eto...`;
+// ... Ary avy eo dia tohizo amin'ny titre rehetra
+// Raha tsy mbola misy tononkira dia apetraho hoe:
+songTitles.forEach(title => {
+  if(!songs[title]) songs[title] = "Tononkira mbola tsy misy.";
+});
+
+// Mamorona bouton tsirairay ho an'ny titre
+const titleButtonsDiv = document.getElementById("titleButtons");
+songTitles.forEach(title => {
+  const btn = document.createElement("button");
+  btn.textContent = title;
+  btn.onclick = () => showSongPage(title);
+  titleButtonsDiv.appendChild(btn);
+});
+
+// Function miseho ny page hira
+function showSongPage(title){
+  document.getElementById('songTitle').textContent = title;
+  document.getElementById('songLyrics').textContent = songs[title];
+  showPage('songContent'); // Ity no function efa ao amin'ny script-nao ho navigation
+}

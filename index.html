@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIADEMA - Choral</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>DIADEMA</h1>
+    <p>Kristiana Tanora Loterana Malagasy Miarinkofeno</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero / Accueil -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+   
+    <div class="hero-content">
+      <h1>DIADEMA</h1>
+      <p>IZAHO TSY MAINTSY MITORY</p>
+      <div class="buttons">
+        <button onclick="showTitlePage()">
+          <img src="photos/music.jpg" alt="Tononkira" class="btn-icon"> TONONKIRA
+        </button>
+        <button onclick="showPage('photos')">
+          <img src="photos/picture.png" alt="Sary" class="btn-icon"> SARY
+        </button>
+        <button onclick="showPage('notes')">
+          <img src="photos/notepad.png" alt="Bloc Note" class="btn-icon"> BLOC NOTE
+        </button>
+        <button onclick="showPage('information')">
+          <img src="photos/information.png" alt="Information" class="btn-icon"> INFORMATION
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page titres Hira -->
+  <section id="titles" class="page">
+    <h2>Tononkira – Fidio ny titre</h2>
+    <input type="text" id="searchTitle" placeholder="Mitady titre..." onkeyup="filterTitles()">
+    <div class="song-buttons" id="titleButtons">
+      <!-- Buttons tononkira eto -->
+    </div>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Page hira tsirairay -->
+ <section id="songContent" class="page">
+  <div class="song-header">
+    <h2 id="songTitle"></h2>
+    <button class="back-btn" onclick="backToTitles()">Hiverina Titre</button>
+  </div>
+  <div class="song-lyrics-container">
+    <pre id="songLyrics"></pre>
+  </div>
+</section>
+
+  <!-- Gallery automatique -->
+  <section id="photos" class="page">
+    <h2>Sary</h2>
+    <div class="photo-gallery" id="selectedPhotos"></div>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Photo Viewer (overlay ho an'ny sary selectionnée) -->
+  <section id="photoViewer" class="page">
+    <h2>Sary</h2>
+    <div class="photo-single-container">
+      <img id="photoSingle" src="" alt="Photo sélectionnée">
+    </div>
+    <button class="back-btn" onclick="backToGallery()">Hiverina Gallery</button>
+  </section>
+
+  <!-- Bloc Note -->
+  <section id="notes" class="page">
+    <h2>Bloc Note</h2>
+    <div id="noteForm">
+      <input type="text" id="noteTitle" placeholder="Titre note">
+      <textarea id="noteText" placeholder="Soraty eto ny notes-nao..."></textarea>
+      <button onclick="saveNote()">💾 Enregistrer</button>
+    </div>
+    <input type="text" id="searchNote" placeholder="Mitady note..." onkeyup="filterNotes()">
+    <div id="notesList"></div>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+  <!-- Information -->
+  <section id="information" class="page">
+    <h2>Information</h2>
+    <p>Gloire à Dieu seul.
+Le talent vient de Lui et je le Lui offre entièrement.
+Il se peut que plusieurs choses ne soient pas encore réalisées dans cette application DIADEMA, mais s’il y a des améliorations que vous souhaitez proposer pour faire avancer le Royaume de Dieu, n’hésitez pas à me contacter.
+</p>
+    <p>Contact: <a href="mailto:aimephilipin6@gmail.com">aimephilipin6@gmail.com</a></p>
+    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+  </section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 DIADEMA - RAMAROLAHY Aimé Philipin</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
