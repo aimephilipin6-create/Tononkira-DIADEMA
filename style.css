@@ -1,20 +1,27 @@
+*{
+box-sizing:border-box;
+}
+
 body{
   font-family:'Montserrat',sans-serif;
   background:#0d0d0d;
   color:#fff;
   margin:0;
   min-height:100vh;
-  
+  display:flex;
+  flex-direction:column;
 }
+
+/* HEADER */
 
 header{
   background:#1a1a1a;
-  padding:25px 15px;
+  padding:20px;
   text-align:center;
 }
 
 header h1{
-  font-size:2.5rem;
+  font-size:2.2rem;
   color:#00cfff;
   margin:0;
 }
@@ -23,13 +30,23 @@ header p{
   color:#ccc;
 }
 
+/* MAIN */
+
+main{
+flex:1;
+position:relative;
+}
+
+/* HERO */
+
 .hero{
   position:relative;
-  height:85vh;
+  min-height:80vh;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  padding:20px;
   overflow:hidden;
   background:linear-gradient(135deg,#0d0d0d,#001f3f);
   transition:all 0.4s ease;
@@ -40,24 +57,14 @@ header p{
   transform:scale(0.95);
 }
 
-.hero img.solfege-img{
-  position:absolute;
-  width:120px;
-  top:15px;
-  right:15px;
-  opacity:0.7;
-  object-fit:contain;
-  image-rendering:auto;
-}
-
 .hero-content{
-  position:relative;
   z-index:2;
-  padding:20px;
+  width:100%;
+  max-width:500px;
 }
 
 .hero-content h1{
-  font-size:3rem;
+  font-size:2.5rem;
   color:#00cfff;
 }
 
@@ -66,10 +73,12 @@ header p{
   margin-bottom:25px;
 }
 
+/* BUTTONS */
+
 .buttons{
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:12px;
 }
 
 .buttons button{
@@ -78,7 +87,7 @@ header p{
   border-radius:12px;
   background:#00cfff;
   color:#000;
-  font-weight:500;
+  font-weight:600;
   cursor:pointer;
   transition:0.3s;
   display:flex;
@@ -92,33 +101,30 @@ header p{
 }
 
 .btn-icon{
-  width:24px;
-  height:24px;
-  object-fit:contain;
+  width:22px;
+  height:22px;
 }
 
+/* PAGES */
 
 .page{
-  position:absolute;   /* soloina */
+  position:fixed;
   top:0;
   left:0;
   width:100%;
-  min-height:100vh;    /* soloina */
+  height:100vh;
+  overflow-y:auto;
   background:#111;
-  z-index:999;
-  padding:25px 20px;
+  z-index:1000;
+  padding:20px;
   display:none;
-  justify-content:center;
 }
 
 .page.show{
   display:block;
 }
 
-@keyframes slideUp{
-  from{transform:translateY(40px);opacity:0;}
-  to{transform:translateY(0);opacity:1;}
-}
+/* INPUT */
 
 input, textarea{
   width:100%;
@@ -129,6 +135,8 @@ input, textarea{
   background:#1a1a1a;
   color:#fff;
 }
+
+/* SONG BUTTONS */
 
 .song-buttons{
   display:flex;
@@ -142,10 +150,13 @@ input, textarea{
   border-radius:10px;
   background:#00cfff;
   color:#000;
+  cursor:pointer;
 }
 
+/* BACK BUTTON */
+
 .back-btn{
-  margin-top:15px;
+  margin-top:20px;
   background:#ff4d4d;
   color:#fff;
   border:none;
@@ -153,6 +164,8 @@ input, textarea{
   border-radius:10px;
   cursor:pointer;
 }
+
+/* PHOTO GALLERY */
 
 .photo-gallery{
   display:flex;
@@ -166,153 +179,165 @@ input, textarea{
   object-fit:cover;
   margin:5px;
   border-radius:8px;
-  image-rendering:auto;
   cursor:pointer;
-  transition:all 0.3s ease;
+  transition:0.3s;
 }
 
 .photo-gallery img:hover{
   transform:scale(1.05);
 }
 
-/* Photo single overlay */
+/* PHOTO VIEWER */
+
 .photo-single-container{
   display:flex;
   justify-content:center;
 }
 
 .photo-single-container img{
-  max-width:90%;
+  max-width:95%;
   max-height:80vh;
   object-fit:contain;
   border-radius:8px;
 }
 
-@media(min-width:768px){
-  .buttons{
-    flex-direction:row;
-    justify-content:center;
-    flex-wrap:wrap;
-  }
-  .buttons button{
-    width:200px;
-  }
+/* NOTES */
+
+.note-item{
+  background:#1a1a1a;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  position:relative;
 }
+
+.note-item strong{
+  color:#00cfff;
+}
+
+.note-menu{
+  position:absolute;
+  top:10px;
+  right:10px;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.menu-options{
+  display:none;
+  position:absolute;
+  top:30px;
+  right:10px;
+  background:#333;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.menu-options button{
+  display:block;
+  width:100%;
+  padding:8px;
+  border:none;
+  background:#333;
+  color:white;
+}
+
+.menu-options button:hover{
+  background:#00cfff;
+  color:black;
+}
+
+/* SONG PAGE */
+
+.song-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.song-header h2{
+  color:#00cfff;
+}
+
+.song-lyrics-container{
+  background:#1a1a1a;
+  border-radius:12px;
+  padding:20px;
+  margin-top:15px;
+  max-height:70vh;
+  overflow-y:auto;
+}
+
+.song-lyrics-container pre{
+  font-family:'Montserrat',sans-serif;
+  font-size:1rem;
+  line-height:1.7;
+  white-space:pre-wrap;
+  text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:15px;
+background:#1a1a1a;
+color:#aaa;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
-  .photo-gallery img{
-    width:45%;
-    height:auto;
-  }
-  .hero{
-    height:40vh;
-  }
+
+.hero{
+min-height:70vh;
 }
 
-.note-item {
-  background: #1a1a1a;
-  padding: 12px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  position: relative;
+.hero-content h1{
+font-size:2rem;
 }
 
-.note-item strong {
-  color: #00cfff;
+.photo-gallery img{
+width:45%;
+height:auto;
 }
 
-.note-item p {
-  margin-top: 5px;
 }
 
-.note-menu {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 18px;
+/* PC */
+
+@media(min-width:768px){
+
+.buttons{
+flex-direction:row;
+flex-wrap:wrap;
+justify-content:center;
 }
 
-.menu-options {
-  display: none;
-  position: absolute;
-  top: 30px;
-  right: 10px;
-  background: #333;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 10;
+.buttons button{
+width:200px;
 }
 
-.menu-options button {
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-  border: none;
-  background: #333;
-  color: white;
-  text-align: left;
-  cursor: pointer;
+}
+.back-btn{
+  position:fixed;
+  top:15px;
+  left:15px;
+  background:#ff4d4d;
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  z-index:2000;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
-.menu-options button:hover {
-  background: #00cfff;
-  color: black;
+.back-btn:active{
+  transform:scale(0.95);
 }
-/* === Page Tononkira Modern === */
-.song-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.song-header h2 {
-  font-size: 2rem;
-  color: #00cfff;
-  margin: 0;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
-
-.song-lyrics-container {
-  background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
-  border-radius: 12px;
-  padding: 20px;
-  max-height: 70vh;   /* nampitomboina kely */
-  overflow-y: auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  border: 1px solid #00cfff;
-
-  display: flex;
-  justify-content: center;
-}
-
-.song-lyrics-container pre {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e0f7ff;
-  white-space: pre-wrap;
-  text-align: center;      /* IZAO no centre */
-  width: 100%;
-}
-
-/* Scrollbar styling */
-.song-lyrics-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.song-lyrics-container::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 8px;
-}
-
-.song-lyrics-container::-webkit-scrollbar-thumb {
-  background: #00cfff;
-  border-radius: 8px;
-}
-
-.song-lyrics-container::-webkit-scrollbar-thumb:hover {
-  background: #00a5cc;
+.page{
+  padding-top:60px;
 }
