@@ -80,17 +80,39 @@
   </section>
 
   <!-- Bloc Note -->
-  <section id="notes" class="page">
-    <h2>Bloc Note</h2>
-    <div id="noteForm">
-      <input type="text" id="noteTitle" placeholder="Titre note">
-      <textarea id="noteText" placeholder="Soraty eto ny notes-nao..."></textarea>
-      <button onclick="saveNote()">💾 Enregistrer</button>
-    </div>
-    <input type="text" id="searchNote" placeholder="Mitady note..." onkeyup="filterNotes()">
-    <div id="notesList"></div>
-    <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
-  </section>
+<section id="notes" class="page">
+
+<h2>Bloc Note</h2>
+
+<input type="text" id="searchNote" placeholder="Mitady note..." onkeyup="filterNotes()">
+
+<div id="notesList"></div>
+
+<!-- bouton add note -->
+
+<button class="add-note-btn" onclick="openNoteForm()">+</button>
+
+<!-- modal -->
+
+<div id="noteModal" class="note-modal">
+
+<div class="note-modal-content">
+
+<input type="text" id="noteTitle" placeholder="Titre note">
+
+<textarea id="noteText" placeholder="Soraty eto ny notes-nao..."></textarea>
+
+<button onclick="saveNote()">💾 Enregistrer</button>
+
+<button onclick="closeNoteForm()">Annuler</button>
+
+</div>
+
+</div>
+
+<button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
+
+</section>
 
   <!-- Information -->
   <section id="information" class="page">
@@ -99,7 +121,9 @@
 Le talent vient de Lui et je le Lui offre entièrement.
 Il se peut que plusieurs choses ne soient pas encore réalisées dans cette application DIADEMA, mais s’il y a des améliorations que vous souhaitez proposer pour faire avancer le Royaume de Dieu, n’hésitez pas à me contacter.
 </p>
-    <p>Contact: <a href="mailto:aimephilipin6@gmail.com">aimephilipin6@gmail.com</a></p>
+    <p>Contact:<a href="mailto:aimephilipin6@gmail.com?subject=DIADEMA Application">
+aimephilipin6@gmail.com
+</a>
     <button class="back-btn" onclick="backToHome()">Hiverina Accueil</button>
   </section>
 
