@@ -1512,3 +1512,14 @@ function showSongPage(title){
   lyricsEl.scrollTop = 0; // manomboka eo ambony rehefa misokatra
   showPage('songContent');
 }
+function openNoteForm(){
+
+document.getElementById("noteModal").style.display="flex";
+
+}
+
+function closeNoteForm(){
+
+document.getElementById("noteModal").style.display="none";
+
+}
